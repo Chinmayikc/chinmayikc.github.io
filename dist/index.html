@@ -27,6 +27,15 @@
   </style>
   <style id="static-palette-overrides">
     :root{--primary:#BA181B;--secondary:#E5383B;--mint:#D3D3D3;--paper:#F5F3F4;--off-white:#FFFFFF;--ink:#0B090A;--ink-soft:#161A1D;--line:rgba(11,9,10,.2);--line-strong:rgba(11,9,10,.45);--font-display:'Poppins','DM Sans','Segoe UI',sans-serif}
+    body{background-color:var(--ink);background-image:radial-gradient(rgba(245,243,244,.18) 1px,transparent 1px);background-size:24px 24px}
+    body::before,body::after{position:fixed;z-index:-1;content:'';pointer-events:none;border:1px solid rgba(229,56,59,.3)}
+    body::before{top:12vh;left:5vw;width:150px;height:150px;border-radius:28px;transform:rotate(18deg)}
+    body::after{right:6vw;bottom:12vh;width:130px;height:130px;border-radius:50%;transform:rotate(-18deg);box-shadow:24px -22px 0 -23px var(--secondary),-26px 25px 0 -24px rgba(245,243,244,.55)}
+    .site-shell{position:relative;width:min(1160px,calc(100% - 48px));margin:112px auto 28px;overflow:hidden;background:var(--paper);border:1px solid rgba(245,243,244,.26);border-radius:30px;box-shadow:0 24px 64px rgba(0,0,0,.34)}
+    .site-shell::before{position:absolute;top:0;right:0;width:42%;height:260px;content:'';pointer-events:none;background:radial-gradient(circle at 70% 20%,rgba(229,56,59,.15),transparent 62%)}
+    .site-shell .footer{width:var(--content)}
+    .site-header{width:min(820px,calc(100% - 32px));border-radius:999px;box-shadow:0 12px 30px rgba(0,0,0,.2)}
+    .skill-card,.project-entry,.hero-description-panel{box-shadow:0 12px 28px rgba(11,9,10,.12)}
     h1,h2,h3,.preloader-mark,.brand-mark,.skill-symbol,.project-shell h3{font-family:'Poppins','DM Sans','Segoe UI',sans-serif}
     .site-header{background:rgba(245,243,244,.88)}.site-header.is-scrolled{background:rgba(245,243,244,.97)}
     .hero::before{background:linear-gradient(135deg,rgba(229,56,59,.18),rgba(186,24,27,.08) 55%,transparent)}
@@ -45,13 +54,15 @@
     .panel-kicker{margin-bottom:18px;color:var(--ink);font-family:'Poppins','DM Sans','Segoe UI',sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
     .hero-description-panel p{margin:0 0 16px;font-size:15px;line-height:1.62}.hero-description-panel p:last-child{margin-bottom:0}
     .scene-wrap{display:none}
-    @media(max-width:900px){.hero-description-panel{max-width:none;padding:26px 24px}.hero-role{font-size:19px}.projects-grid{grid-template-columns:1fr}.project-note-heading{align-items:flex-start;flex-direction:column;gap:8px}}@media(prefers-reduced-motion:reduce){.pop-in{animation:none}}
+    @media(max-width:900px){.site-shell{width:calc(100% - 24px);margin-top:92px;border-radius:22px}.site-header{width:calc(100% - 24px)}.hero-description-panel{max-width:none;padding:26px 24px}.hero-role{font-size:19px}.projects-grid{grid-template-columns:1fr}.project-note-heading{align-items:flex-start;flex-direction:column;gap:8px}}
+    @media(max-width:560px){.site-shell{width:calc(100% - 14px);margin-top:82px;margin-bottom:14px;border-radius:18px}.site-header{width:calc(100% - 18px);top:10px}.site-shell .footer{width:var(--content)}}@media(prefers-reduced-motion:reduce){.pop-in{animation:none}}
   </style>
 </head>
 <body class="is-loading">
   <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="preloader" aria-hidden="true"><div class="preloader-inner"><div class="preloader-mark">C /</div><div class="preloader-copy">Chinmayi portfolio</div><div class="preloader-line"><span></span></div></div></div>
   <header class="site-header" id="top"><a class="brand" href="#hello" aria-label="Chinmayi home"><span class="brand-mark">C</span><span><span class="brand-name">Chinmayi</span><span class="brand-role">AI + security</span></span></a><nav class="nav-links" id="nav-links" aria-label="Primary navigation"><a class="nav-link is-active" href="#hello">Hello</a><a class="nav-link" href="#projects">Projects</a><a class="nav-link" href="#skills">Skills</a><a class="nav-link" href="#thank-you">Thank You</a></nav><button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span></button></header>
+  <div class="site-shell">
   <main id="main-content">
     <section class="hero" id="hello" aria-labelledby="hero-title"><div class="hero-copy" data-reveal><div class="eyebrow">Hello, future-facing builder</div><h1 id="hero-title">Hi, I’m Chinmayi.</h1><p class="hero-role">Cybersecurity and AI Engineer</p><p class="hero-lead">Building intelligent, secure, and meaningful digital experiences.</p><p class="hero-intro">I am a 3rd-semester B.Tech CSE student at REVA University and currently working as an Artificial Intelligence Intern at Abscissa.dev.</p><p class="hero-intro hero-intro-secondary">In my 3rd sem, I learned how to set up and use VS Code for different programming languages, including C, C++, Python, and Java. I gained practical experience with debugging, code formatting, problem-solving, and using Git and GitHub for version control. I also learned how to collaborate with others using Live Share, review code with GitLens, and solve coding problems on LeetCode. Additionally, these activities helped me improve my logical thinking, teamwork, documentation, and time-management skills while building a well-organized GitHub portfolio.</p><div class="button-row"><a class="button button-primary" href="#projects">View projects</a><a class="button button-quiet" href="#contact" data-placeholder-link="Resume">Download resume</a><a class="button button-quiet" href="#contact">Contact me</a></div><div class="hero-meta" aria-label="Contact placeholders"><a href="#contact" data-placeholder-link="Email">Email</a><a href="#contact" data-placeholder-link="GitHub">GitHub</a><a href="#contact" data-placeholder-link="LinkedIn">LinkedIn</a><span>REVA University · Abscissa.dev</span></div></div>
       <aside class="hero-description-panel" data-reveal aria-labelledby="about-panel-title"><div class="panel-kicker" id="about-panel-title">About me</div><p>Computer Science Engineering student interested in Software Development, Cybersecurity, and AI technologies.</p><p>Building skills in C, Java, Python, Git/GitHub, modern frameworks, and AI-powered development tools.</p><p>Exploring security-focused developer security tooling projects like Abscissa and Vyper Guard to understand architecture and get hands-on experience.</p><p>Passionate about emerging technologies, continuous learning, and turning ideas into practical projects.</p></aside>
@@ -61,6 +72,7 @@
     <section class="section contact-section" id="thank-you" aria-labelledby="thank-you-title"><div data-reveal><div class="section-kicker">03 / Thank you</div><h2 id="thank-you-title">Thank you for visiting my portfolio.</h2><p class="contact-lead">Let’s connect, collaborate, and build something meaningful together.</p><a class="button button-primary" href="#contact" id="contact">Start a conversation</a></div><div class="contact-links" data-reveal aria-label="Contact links"><a class="contact-link" href="#contact" data-placeholder-link="Email"><span>Email</span><span>Placeholder</span></a><a class="contact-link" href="#contact" data-placeholder-link="GitHub"><span>GitHub</span><span>Placeholder</span></a><a class="contact-link" href="#contact" data-placeholder-link="LinkedIn"><span>LinkedIn</span><span>Placeholder</span></a><a class="contact-link" href="#contact" data-placeholder-link="Resume"><span>Resume</span><span>Placeholder</span></a></div></section>
   </main>
   <footer class="footer"><span>© 2026 Chinmayi. Built with curiosity.</span><a class="back-top" href="#top">Back to top <i aria-hidden="true"></i></a></footer>
+  </div>
   <script>
     (() => {
       const body=document.body,reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;if(reduceMotion)body.classList.add('reduced-motion');
